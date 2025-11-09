@@ -8,7 +8,7 @@ public class a {
         p.print(1, 2, 3);               // → "Числа: [1, 2, 3]" 
     }
 }
-public class Printer {
+class Printer {
     // Varargs с типом String
     public void print(String... messages) {
         System.out.println("Строки: " + Arrays.toString(messages));
@@ -23,4 +23,5 @@ public class Printer {
     public void print(String message) {
         System.out.println("Одна строка: " + message);
     }
+
 }
