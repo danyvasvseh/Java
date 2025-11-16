@@ -1,40 +1,21 @@
 public class a {
-public static void main(String[] args) {
-
-    Base base = new Base();
-
-    // приватный тут нельзя
-    
-    Base.PackagePrivateInner packagePrivateInner = base.new PackagePrivateInner();
-    
-    Base.ProtectedInner protectedInner = base.new ProtectedInner();
-
-    Base.PublicInner publicInner = base.new PublicInner();
-
+    public static void main(String[] args) {
+        Interface.NestedClass nested = new Interface.NestedClass("nothing");
+        nested.show();
+    }
 }
+interface Interface {
+    // Вложенный класс внутри интерфейса
+    class NestedClass {
+        private String data;
 
+        public NestedClass(String data) {
+            this.data = data;
+        }
+
+        public void show() {
+            System.out.println("Data: " + data);
+        }
+
+    }
 }
-
-class Base {
-    
-    Base(){
-        new PackagePrivateInner();
-    }
-    // доступен только внутри класса
-    private class PrivateInner { 
-    }
-
-    // доступен только в пакете
-    class PackagePrivateInner {
-    }
-
-    // доступен в пакете и в наследниках
-    protected class ProtectedInner {
-    }
-
-    // доступен везде
-    public class PublicInner {
-    }
-
-}
-
