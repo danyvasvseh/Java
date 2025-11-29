@@ -16,7 +16,7 @@ public class A {
             }
         } catch (java.io.IOException | NumberFormatException e) {
             // логируем и завершаем операцию
-            System.err.println("Обработано одинаково: " + e.getClass().getSimpleName() + " — " + e.getMessage());
+            System.err.println("Обработано одинаково: " + e.getClass().getSimpleName() + " - " + e.getMessage());
         }
 
        // Обработка иерархии исключений
@@ -33,4 +33,5 @@ public class A {
 
        // Другой порядок выдаст ошибку, работает только от частного к общему
     }
+
 }
